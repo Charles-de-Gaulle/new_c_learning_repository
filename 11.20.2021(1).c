@@ -148,33 +148,37 @@
 //	printf("%d", (int)(money + 1.2 * stack));
 //	return 0;
 //}
-void fuck(int n)
-{
-	if (n/2<n/2.0)
-	{
-		n = n * 3 + 1;
-	}
-	else
-	{
-		n = n / 2;
-	}
-	if (n != 1)
-	{
-		fuck(n);
-		printf("%d ", n);
-	}
-	else
-	{
-		printf("%d ", n);
-		
-	}
-}
-int main()
-{
-	int i,u,n;
-	u = 1;
-	scanf("%d", &n);
-	fuck(n);
-	printf("%d ", n);
-	return 0;
-}
+//void fuck(int n)
+//{
+//	if (n/2<n/2.0)
+//	{
+//		n = n * 3 + 1;
+//	}
+//	else
+//	{
+//		n = n / 2;
+//	}
+//	if (n != 1)
+//	{
+//		fuck(n);
+//		printf("%d ", n);
+//	}
+//	else
+//	{
+//		printf("%d ", n);
+//		
+//	}
+//}
+//int main()
+//{
+//	int i,u,n;
+//	u = 1;
+//	scanf("%d", &n);
+//	if (n != 1)
+//	{
+//		fuck(n);
+//	}
+//
+//	printf("%d ", n);
+//	return 0;
+//}
