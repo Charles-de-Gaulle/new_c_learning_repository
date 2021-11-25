@@ -6,82 +6,82 @@
 若 (K-1)(K−1) 在第一行最后一列，则将 KK 填在 (K-1)(K−1) 的正下方；
 若 (K-1)(K−1) 既不在第一行，也不在最后一列，如果 (K-1)(K−1) 的右上方还未填数，则将 KK 填在
 (K-1)(K−1) 的右上方，否则将 KK 填在 (K-1)(K−1) 的正下方*/
-#include<stdio.h>
-#include<stdlib.h>
-#include<memory.h>
-int main()
-{
-	int n,k,row,col,sit;//sit=(n*row-1)+col-1
-	scanf("%d", &n);
-	int* pc = malloc(sizeof(int) * n * n);
-	int i;
-	for (i = 0; i < n * n; i++)
-	{
-		memset(pc+i, 0, sizeof(int));
-	}
-
-	for (k = 1; k <= n * n; k++)
-	{
-		if (k == 1)
-		{
-			row=1;
-			col = n / 2+1;
-			sit = (n * (row - 1)) + col - 1;
-			*(pc+sit)= k;
-		}
-		else
-		{
-			if((row==1)&&col!=n )                    
-			{
-				row=n;
-				col+=1;
-				sit = (n * (row - 1)) + col - 1;
-				*(pc + sit) = k;
-			}
-			else if ((col==n)&&row!=1)
-			{
-				col = 1;
-				row -= 1;
-				sit = (n * (row - 1)) + col - 1;
-				*(pc + sit) = k;
-			}
-			else if (row == 1 && col == n)
-			{
-				row += 1;
-				col = col;
-				sit = (n * (row - 1)) + col - 1;
-				*(pc + sit) = k;
-			}
-			else if (row != 1 && col != n)//
-			{
-				if (*(pc + (n * (row - 2)) + (col + 1) - 1)==0)
-				{
-					row -= 1;
-					col += 1;
-					sit = (n * (row - 1)) + col - 1;
-					*(pc + sit) = k;
-				}
-				else
-				{
-					row += 1;
-					sit = (n * (row - 1)) + col - 1;
-					*(pc + sit) = k;
-				}
-			}
-
-		}
-	}
-	for (i = 1; i <= n * n; i++)
-	{
-		if (i % n != 0)
-		{
-			printf("%d ", *(pc + i-1));
-		}
-		else
-		{
-			printf("%d\n", *(pc + i - 1));
-		
-		}
-	}
-	return 0;
-}
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<memory.h>
+//int main()
+//{
+//	int n,k,row,col,sit;//sit=(n*row-1)+col-1
+//	scanf("%d", &n);
+//	int* pc = malloc(sizeof(int) * n * n);
+//	int i;
+//	for (i = 0; i < n * n; i++)
+//	{
+//		memset(pc+i, 0, sizeof(int));
+//	}
+//
+//	for (k = 1; k <= n * n; k++)
+//	{
+//		if (k == 1)
+//		{
+//			row=1;
+//			col = n / 2+1;
+//			sit = (n * (row - 1)) + col - 1;
+//			*(pc+sit)= k;
+//		}
+//		else
+//		{
+//			if((row==1)&&col!=n )                    
+//			{
+//				row=n;
+//				col+=1;
+//				sit = (n * (row - 1)) + col - 1;
+//				*(pc + sit) = k;
+//			}
+//			else if ((col==n)&&row!=1)
+//			{
+//				col = 1;
+//				row -= 1;
+//				sit = (n * (row - 1)) + col - 1;
+//				*(pc + sit) = k;
+//			}
+//			else if (row == 1 && col == n)
+//			{
+//				row += 1;
+//				col = col;
+//				sit = (n * (row - 1)) + col - 1;
+//				*(pc + sit) = k;
+//			}
+//			else if (row != 1 && col != n)//
+//			{
+//				if (*(pc + (n * (row - 2)) + (col + 1) - 1)==0)
+//				{
+//					row -= 1;
+//					col += 1;
+//					sit = (n * (row - 1)) + col - 1;
+//					*(pc + sit) = k;
+//				}
+//				else
+//				{
+//					row += 1;
+//					sit = (n * (row - 1)) + col - 1;
+//					*(pc + sit) = k;
+//				}
+//			}
+//
+//		}
+//	}
+//	for (i = 1; i <= n * n; i++)
+//	{
+//		if (i % n != 0)
+//		{
+//			printf("%d ", *(pc + i-1));
+//		}
+//		else
+//		{
+//			printf("%d\n", *(pc + i - 1));
+//		
+//		}
+//	}
+//	return 0;
+//}
