@@ -34,7 +34,10 @@ int main(void)
 		else if (input != 1 && input != 2 && input != 3 && input != 4)
 		{
 			printf("retype\n");
-			
+			while (getchar()!='\n')
+			{
+				continue;
+			}
 			continue;
 		}
 		switch (input)
@@ -52,6 +55,14 @@ int main(void)
 		}
 		printf("type the hours you work this week>");
 		scanf("%d", &hours);
+		if (!hours)
+		{
+			while (getchar() != '\n')
+			{
+				continue;
+			}
+			printf("retype");
+		}
 		if (hours <= 40)
 		{
 			sum_salare = hours * basic_salare;
