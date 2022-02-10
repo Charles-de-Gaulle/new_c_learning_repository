@@ -259,7 +259,7 @@ int main()
 	{
 		for (i = 0; i < temp_all_book.size; i++)
 		{
-			if (strcmp(temp_users[i].users_name), blank)
+			if (strcmp(temp_users[i].users_name, blank))
 			{
 				/*fprintf(pfb, "%d %d %d %d %s %s",
 					temp_book[i].state,

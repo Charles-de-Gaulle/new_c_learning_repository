@@ -86,20 +86,24 @@ int borrow_book(all_users* temp_all_users ,all_book* temp_all_book,int count)
 				(temp_all_users->_pointer + count)->borrow_nmuber++;
 				strcpy((temp_all_book->pointer + sit)->belong_to, (temp_all_users->_pointer + count)->users_name);
 				printf("借阅成功\n");
+				return 0;
 			}
 
 			else
 			{
 				printf("借阅失败，已借出\n");
+				return -1;
 			}
 		}
 		else
 		{
 			printf("找不到，借阅失败\n");
+			return -1;
 		}
 	}
 	else
 		printf("借满了\n");
+	return -1;
 }
 //图书归还
 int back_book(all_users* temp_all_users, all_book* temp_all_book, int count)
@@ -127,15 +131,18 @@ int back_book(all_users* temp_all_users, all_book* temp_all_book, int count)
 			(temp_all_book->pointer + sit)->borrow_time = 0;
 			strcpy((temp_all_book->pointer+sit)->belong_to, "0");
 			(temp_all_users->_pointer + count)->borrow_nmuber--;
+			return 0;
 		}
 		else
 		{
 			printf("归还失败，您未借此书\n");
+			return -1;
 		}
 	}
 	else
 	{
 		printf("归还失败，查无此书\n");
+		return -1;
 	}
 }
  
@@ -239,6 +246,7 @@ int sum_book_info(all_book* temp_all_book)
 		lead++;
 	}
 	printf("借出%d本，共%d本\n", lead, temp_all_book->size);
+	return 0;
 }
 
 
