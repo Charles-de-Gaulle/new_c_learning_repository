@@ -17,7 +17,7 @@ int my_calculate(int* p, int n)
 		for (int i = 0; i < n; i++)
 		{
 			count = 0;
-			int* new_p = new int[sizeof((n - 1) * (n - 1))];
+			int* new_p = new int[(n - 1) * (n - 1)];
 			for (int i1 = 0; i1 < n; i1++)
 			{
 				for (int i2 = 0; i2 < n; i2++)
@@ -51,7 +51,7 @@ int main()
 		<<"按照从左至右，从上至下输入即可\n"\
 		"仅限数值行列式哦\n" << endl, cin >> n)
 	{
-		int* p = new int[n * n * sizeof(int)];
+		int* p = new int[n * n];
 		for (int i1 = 0; i1 < n; i1++)
 		{
 			//cout << "|";
