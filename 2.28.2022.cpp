@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 
-	int arr[3];
-	2[arr] = 2;
+	char arr[3];
+	scanf("%s", arr);
 	cout << 2[arr] << endl;
 }
